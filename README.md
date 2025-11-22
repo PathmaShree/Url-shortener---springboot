@@ -1,6 +1,6 @@
 # 🔗 URL Shortener Project
 
-A full-stack URL Shortener application built with **Spring Boot (Java)** backend and **React.js** frontend.  
+URL Shortener application is built with **Spring Boot (Java)** backend and **React.js** frontend.  
 Allows users to create short URLs, track analytics, view visit counts, and manage URLs with expiry features.
 
 ---
