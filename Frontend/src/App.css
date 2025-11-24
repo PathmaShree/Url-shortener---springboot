@@ -1,6 +1,4 @@
-/* -----------------------------------------------------
-    Global Styles
------------------------------------------------------ */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +7,7 @@
 }
 
 body {
-  /* Focus on a softer transition between the core colors */
+  
   background: linear-gradient(135deg, #fce9f0 0%, #e8dffb 50%, #d4ebff 100%);
   color: #444;
   line-height: 1.6;
@@ -21,8 +19,6 @@ body {
   padding: 20px;
   transition: background 0.5s ease;
 }
-
-/* Smooth fade animations */
 .fade-in {
   animation: fadeIn 0.6s ease-in-out;
 }
@@ -39,9 +35,7 @@ body {
   }
 }
 
-/* -----------------------------------------------------
-    Container
------------------------------------------------------ */
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -51,23 +45,22 @@ body {
   gap: 30px;
 }
 
-/* -----------------------------------------------------
-    Navigation Bar
------------------------------------------------------ */
+
 nav {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 0;
+  
   flex-wrap: wrap;
 
-  /* Softer, more blended nav background */
+  
   background: linear-gradient(90deg, #ffeff4 0%, #f0e6ff 50%, #e2f1ff 100%);
   padding: 18px 25px;
   border-radius: 16px;
   width: 100%;
   margin-bottom: 35px;
 
-  /* Added subtle inset border for structure and a softer shadow */
+  
   box-shadow: 0 6px 20px rgba(180, 160, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   transition: all 0.4s ease;
 }
@@ -79,63 +72,82 @@ nav a {
   font-weight: 600;
   text-decoration: none;
 
-  border-radius: 12px;
+  border-radius: 0;
+  
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
 
-  /* PROMINENT PARTITION STYLING */
-  /* Increased thickness to 2px and darkened the color for prominence */
-  border-left: 2px solid rgba(130, 100, 200, 0.4);
-  /* Adjusted padding to center the text with the new 2px border */
-  padding-left: 16px;
+
+  border-right: 2px solid rgba(130, 100, 200, 0.4);
+  white-space: nowrap;
 }
 
-/* Remove the partition from the very first link for a cleaner start */
-nav a:first-child {
-  border-left: none;
+
+nav a:last-child {
+  border-right: none;
+}
+nav a+a {
   padding-left: 18px;
-  /* Restore original padding for the first element */
 }
 
-/* END PARTITION STYLING */
+nav a::before,
+nav a+a::before {
+  content: none;
+}
+
 
 nav a:hover {
-  /* Enhanced hover background for a deep, satisfying color shift */
+  
   background: linear-gradient(90deg, #aa94ff 0%, #9980ff 50%, #7dc2ff 100%);
   color: #fff;
   transform: translateY(-3px);
+  border-radius: 12px;
+  
 }
 
-/* -----------------------------------------------------
-    Headings
------------------------------------------------------ */
+
+nav a:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+nav a:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+
 h2 {
   margin-bottom: 20px;
   font-size: 28px;
   text-align: center;
   font-weight: 700;
-  /* Rich, vibrant gradient for text contrast */
+  
   background: linear-gradient(90deg, #ff7a99, #996bff, #40a0ff);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  /* fallback for WebKit */
+  
   -webkit-text-fill-color: transparent;
 }
 
-/* -----------------------------------------------------
-    Form Styling
------------------------------------------------------ */
 form {
-  /* Very subtle, almost white background that blends seamlessly with the body */
+ 
   background: linear-gradient(145deg, #ffffff 0%, #fffaff 50%, #f7fcff 100%);
   padding: 30px;
   border-radius: 16px;
   margin-bottom: 30px;
 
-  /* Lighter, softer shadow */
+ 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
   max-width: 520px;
   width: 100%;
+
+
+  margin-left: auto;
+  margin-right: auto;
+
 
   display: flex;
   flex-direction: column;
@@ -147,16 +159,16 @@ form {
 form input {
   padding: 14px 16px;
   border-radius: 12px;
-  /* Very subtle border */
+
   border: 1px solid #f0e6ff;
   font-size: 16px;
   transition: all 0.3s ease;
-  /* Pure white input to contrast slightly with form */
+ 
   background: #ffffff;
 }
 
 form input:focus {
-  /* Brighter, more focused border and glow */
+  
   border-color: #aa94ff;
   box-shadow: 0 0 12px rgba(170, 148, 255, 0.5);
   outline: none;
@@ -164,7 +176,7 @@ form input:focus {
 
 form button {
   padding: 14px 16px;
-  /* Consistent button gradient */
+  
   background: linear-gradient(90deg, #ff9bb0 0%, #b8a8ff 50%, #8ac6ff 100%);
   color: white;
   font-size: 17px;
@@ -182,9 +194,7 @@ form button:hover {
   transform: translateY(-2px);
 }
 
-/* -----------------------------------------------------
-    Analytics / Visit Count Box
------------------------------------------------------ */
+
 .analytics-container {
   display: flex;
   flex-wrap: wrap;
@@ -195,14 +205,14 @@ form button:hover {
 }
 
 .analytics-box {
-  /* Softer, more encompassing gradient for the box background blend */
+
   background: linear-gradient(145deg, #fff7fa 0%, #e6d8ff 50%, #dcf0ff 100%);
   padding: 28px 32px;
   border-radius: 16px;
   min-width: 180px;
   flex: 1 1 200px;
   text-align: center;
-  /* Soft, airy shadow */
+
   box-shadow: 0 8px 25px rgba(115, 95, 255, 0.2);
   transition: all 0.4s ease;
   cursor: default;
@@ -234,13 +244,13 @@ form button:hover {
 .analytics-box input {
   padding: 14px 18px;
   border-radius: 12px;
-  /* Softer border color */
+ 
   border: 1.5px solid #e0d5ff;
   font-size: 18px;
   min-width: 180px;
   max-width: 320px;
   transition: all 0.4s ease;
-  /* Pure white background */
+ 
   background: #ffffff;
   text-align: center;
   font-weight: 600;
@@ -274,13 +284,11 @@ form button:hover {
 .analytics-box i {
   font-size: 28px;
   margin-bottom: 8px;
-  /* Softer color for icons */
+ 
   color: #a894ff;
 }
 
-/* -----------------------------------------------------
-    Available URLs List Styling
------------------------------------------------------ */
+
 ul {
   width: 100%;
   max-width: 800px;
@@ -291,13 +299,13 @@ ul {
 }
 
 ul li {
-  /* Very subtle, near-white background for list items to contrast slightly with body */
+ 
   background: linear-gradient(135deg, #ffffff 0%, #fffaff 50%, #f7fcff 100%);
   padding: 18px 22px;
   border-radius: 14px;
 
   margin-bottom: 0;
-  /* Lighter, softer shadow */
+
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 
   display: flex;
@@ -307,13 +315,13 @@ ul li {
   word-break: break-word;
 
   transition: all 0.3s ease;
-  /* Kept the strong visual indicator */
+ 
   border-left: 5px solid #b8a8ff;
 }
 
 ul li:hover {
   transform: translateY(-4px);
-  /* Softer, more blended hover shadow */
+
   box-shadow: 0 6px 25px rgba(155, 135, 255, 0.2);
 }
 
@@ -347,9 +355,7 @@ ul li button:hover {
   transform: translateY(-2px);
 }
 
-/* -----------------------------------------------------
-    Messages
------------------------------------------------------ */
+
 p {
   text-align: center;
 }
@@ -364,28 +370,33 @@ p.success {
   font-weight: 600;
 }
 
-/* -----------------------------------------------------
-    Responsive
------------------------------------------------------ */
+
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
     padding: 15px;
   }
 
-  /* Remove vertical partitions when stacked vertically on smaller screens */
+ 
   nav a {
-    border-left: none !important;
-    padding-left: 18px !important;
-    /* Add a horizontal separator instead */
+    border-right: none;
     border-bottom: 2px solid rgba(130, 100, 200, 0.2);
-    /* Prominent horizontal separator */
+    padding: 12px 18px;
+    border-radius: 0 !important;
+  
+  }
+
+  
+  nav a:first-child {
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
   }
 
   nav a:last-child {
     border-bottom: none;
+    border-bottom-left-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
   }
-
 
   form {
     padding: 22px;
