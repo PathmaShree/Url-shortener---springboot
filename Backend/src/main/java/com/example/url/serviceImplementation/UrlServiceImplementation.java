@@ -42,34 +42,10 @@ public class UrlServiceImplementation implements UrlService{
 		UrlMapping saved = urlRepo.save(url);
 		String shortCode = Base62Encoder.encode(saved.getId());
 		saved.setShortCode(shortCode);
+		LocalDateTime expireAt = LocalDateTime.now().plusHours(dto.getExpiryHours());
+		url.setExpireAt(expireAt);
 		urlRepo.save(saved);
 		return UrlMapper.toDto(saved);
-		
-//		    // Convert DTO to Entity
-//		    UrlMapping url = UrlMapper.toEntity(dto);
-//
-//		    // Set expiry based on dto.expiryHours
-//		    if (dto.getExpiryHours() != null) {
-//		        url.setExpireAt(LocalDateTime.now().plusHours(dto.getExpiryHours()));
-//		    } else {
-//		        // optional default expiry if not provided
-//		        url.setExpireAt(LocalDateTime.now().plusDays(7)); // 7 days default
-//		    }
-//
-//		    // Save entity to get generated ID
-//		    UrlMapping saved = urlRepo.save(url);
-//
-//		    // Generate short code using Base62Encoder from the generated ID
-//		    String shortCode = Base62Encoder.encode(saved.getId());
-//		    saved.setShortCode(shortCode);
-//
-//		    // Save again to update shortCode (or wrap in @Transactional to avoid double save)
-//		    saved = urlRepo.save(saved);
-//
-//		    // Convert back to DTO and return
-//		    return UrlMapper.toDto(saved);
-//		
-
 	}
 
 	@Override
