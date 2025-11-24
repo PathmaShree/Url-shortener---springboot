@@ -72,6 +72,38 @@ Allows users to create short URLs, track analytics, view visit counts, and manag
 ### Frontend (`src/`)
 <img width="409" height="916" alt="image" src="https://github.com/user-attachments/assets/e39b0e52-dd9e-4376-bf62-cfab94ffaa4b" />
 
+##Frontend
+<img width="1976" height="1077" alt="image" src="https://github.com/user-attachments/assets/8c89c34d-3ea2-4f98-af1f-c225542fc3f4" />
+<img width="2099" height="1160" alt="image (1)" src="https://github.com/user-attachments/assets/23e818e9-a9d9-4c44-831b-70c24c6c2cef" />
+<img width="1998" height="900" alt="image (2)" src="https://github.com/user-attachments/assets/9e25dbf9-b8dd-4e9f-9ef9-5e58325053b8" />
+<img width="1620" height="589" alt="image (3)" src="https://github.com/user-attachments/assets/c6a46e57-5896-4246-9fba-a59fedf50b54" />
+
+##Sample Request
+# URL Shortener API – Sample Requests & Responses
+
+## Create Short URL
+
+**Request**
+
+```http
+POST /api/urlMapping/createShorten
+Content-Type: application/json
+
+{
+  "originalUrl": "https://www.netflix.com/in/",
+  "expireAt": "2025-11-25T06:08:29"
+}
+
+{
+  "id": 17,
+  "originalUrl": "https://www.netflix.com/in/",
+  "shortCode": "1248h",
+  "createdAt": "2025-11-24T16:38:32",
+  "expireAt": "2025-11-25T06:08:29"
+}
+
+
+
 
 
 
