@@ -35,7 +35,7 @@ public class UrlMapping {
 	@Column(name="URL_ID")
 	private Long id;
 	
-	@Column(name="ORIGINAL_URL",nullable=false)
+    @Column(name="ORIGINAL_URL", nullable=false, length=2000)
 	private String originalUrl;
 	
 	@Column(name="SHORT_CODE",unique=true)
