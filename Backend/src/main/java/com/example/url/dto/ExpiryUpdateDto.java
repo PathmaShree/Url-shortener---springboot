@@ -21,35 +21,4 @@ public class ExpiryUpdateDto {
     @Max(value = 24 * 365, message = "Maximum expiry is 1 year (hours)")
     private Integer expiryHours;
 
-	public Integer getExpiryHours() {
-		return expiryHours;
-	}
-
-	public void setExpiryHours(Integer expiryHours) {
-		this.expiryHours = expiryHours;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(expiryHours);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ExpiryUpdateDto other = (ExpiryUpdateDto) obj;
-		return Objects.equals(expiryHours, other.expiryHours);
-	}
-
-	@Override
-	public String toString() {
-		return "ExpiryUpdateDto [expiryHours=" + expiryHours + "]";
-	}
-	
-	
 }
