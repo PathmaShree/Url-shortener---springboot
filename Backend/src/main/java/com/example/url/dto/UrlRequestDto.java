@@ -26,37 +26,5 @@ public class UrlRequestDto {
     @Min(value = 1, message = "Minimum expiry is 1 hour")
     @Max(value = 24 * 365, message = "Maximum expiry is 1 year (hours)")
     private Integer expiryHours;
-	public String getOriginalUrl() {
-		return originalUrl;
-	}
-	public void setOriginalUrl(String originalUrl) {
-		this.originalUrl = originalUrl;
-	}
-	public Integer getExpiryHours() {
-		return expiryHours;
-	}
-	public void setExpiryHours(Integer expiryHours) {
-		this.expiryHours = expiryHours;
-	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(expiryHours, originalUrl);
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		UrlRequestDto other = (UrlRequestDto) obj;
-		return Objects.equals(expiryHours, other.expiryHours) && Objects.equals(originalUrl, other.originalUrl);
-	}
-	@Override
-	public String toString() {
-		return "UrlRequestDto [originalUrl=" + originalUrl + ", expiryHours=" + expiryHours + "]";
-	}
-
 	
 }
