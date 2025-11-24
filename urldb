@@ -1,0 +1,11 @@
+use url;
+SELECT * FROM url_mapping;
+SELECT * FROM url_analytics;
+SET GLOBAL event_scheduler = ON;
+
+CREATE EVENT delete_expired_urls
+ON SCHEDULE EVERY 1 HOUR
+DO
+  DELETE FROM urls WHERE expire_at < NOW();
+
+SHOW EVENTS;
