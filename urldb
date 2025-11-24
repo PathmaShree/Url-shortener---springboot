@@ -6,6 +6,6 @@ SET GLOBAL event_scheduler = ON;
 CREATE EVENT delete_expired_urls
 ON SCHEDULE EVERY 1 HOUR
 DO
-  DELETE FROM urls WHERE expire_at < NOW();
+  DELETE FROM url_mapping WHERE expire_at < NOW();
 
 SHOW EVENTS;
