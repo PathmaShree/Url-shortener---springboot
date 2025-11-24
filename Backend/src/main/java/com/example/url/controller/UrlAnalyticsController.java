@@ -17,9 +17,6 @@ import com.example.url.serviceImplementation.UrlAnalyticsServiceImplementation;
 @RestController
 @RequestMapping("/api/urlAnalytics")
 public class UrlAnalyticsController {
-
-  ;
-
 	private final UrlAnalyticsServiceImplementation analyticsI;
     private final UrlMappingRepository repo;
 	public UrlAnalyticsController(UrlAnalyticsServiceImplementation analyticsI,UrlMappingRepository repo) {
