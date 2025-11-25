@@ -32,7 +32,7 @@ Allows users to create short URLs, track analytics, view visit counts, and manag
 
 ## ⚙️ Features
 
-### Backend
+###Backend
 - **Short URL creation** with optional expiry
 - **Redirection** with visit logging
 - **Analytics:** Browser, OS, device, IP, referrer, timestamp
@@ -40,7 +40,7 @@ Allows users to create short URLs, track analytics, view visit counts, and manag
 - **CRUD operations** for URL management
 - **REST APIs** for all operations
 
-### Frontend
+###Frontend
 - **Create URL:** Submit original URL, get short URL
 - **Available URLs:** List of all shortened URLs
 - **Analytics:** Fetch and view detailed URL analytics
